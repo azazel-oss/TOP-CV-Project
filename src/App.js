@@ -11,14 +11,47 @@ class App extends Component {
         email: "",
         phone: "",
       },
+      education: [],
+      experience: [],
       isPreviewEnabled: false,
     };
     this.toggleViewMode = this.toggleViewMode.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleGeneralChange = this.handleGeneralChange.bind(this);
+    this.handleEducationAdd = this.handleEducationAdd.bind(this);
+    this.handleExperienceAdd = this.handleExperienceAdd.bind(this);
+    this.handleExperienceRemove = this.handleExperienceRemove.bind(this);
+    this.handleEducationRemove = this.handleEducationRemove.bind(this);
   }
-  handleChange(changedData) {
-    console.log(changedData);
+  handleGeneralChange(changedData) {
     this.setState({ ...changedData });
+  }
+  handleEducationAdd(newEducation) {
+    this.setState((prevState) => {
+      return {
+        education: [...prevState.education, newEducation],
+      };
+    });
+  }
+  handleExperienceAdd(newExperience) {
+    this.setState((prevState) => {
+      return {
+        experience: [...prevState.experience, newExperience],
+      };
+    });
+  }
+  handleEducationRemove(id) {
+    this.setState((prevState) => {
+      return {
+        education: prevState.education.filter((element) => element.id !== id),
+      };
+    });
+  }
+  handleExperienceRemove(id) {
+    this.setState((prevState) => {
+      return {
+        experience: prevState.experience.filter((element) => element.id !== id),
+      };
+    });
   }
   toggleViewMode() {
     this.setState((prevState) => {
@@ -32,9 +65,16 @@ class App extends Component {
       <div>
         <input type="checkbox" name="mode" onClick={this.toggleViewMode} />
         {this.state.isPreviewEnabled ? (
-          <Preview />
+          <Preview previewData={this.state} />
         ) : (
-          <Edit formData={this.state} changeHandler={this.handleChange} />
+          <Edit
+            formData={this.state}
+            generalChangeHandler={this.handleGeneralChange}
+            educationChangeHandler={this.handleEducationAdd}
+            experienceChangeHandler={this.handleExperienceAdd}
+            removeEducationHandler={this.handleEducationRemove}
+            removeExperienceHandler={this.handleExperienceRemove}
+          />
         )}
       </div>
     );
