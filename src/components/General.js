@@ -17,6 +17,7 @@ class General extends Component {
   render() {
     return (
       <div>
+        <h3>General Information</h3>
         <label htmlFor="name">Enter name:</label>
         <input
           type="text"
