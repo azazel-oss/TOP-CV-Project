@@ -1,6 +1,8 @@
 import { Component } from "react";
 import Edit from "./components/Edit";
 import Preview from "./components/Preview";
+import "./styles/App.css";
+import "./styles/checkbox.css";
 
 class App extends Component {
   constructor() {
@@ -62,20 +64,43 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <input type="checkbox" name="mode" onClick={this.toggleViewMode} />
-        {this.state.isPreviewEnabled ? (
-          <Preview previewData={this.state} />
-        ) : (
-          <Edit
-            formData={this.state}
-            generalChangeHandler={this.handleGeneralChange}
-            educationChangeHandler={this.handleEducationAdd}
-            experienceChangeHandler={this.handleExperienceAdd}
-            removeEducationHandler={this.handleEducationRemove}
-            removeExperienceHandler={this.handleExperienceRemove}
-          />
-        )}
+      <div className="container">
+        <header>
+          <h1>CV Maker</h1>
+          <p>Fill up the details and make a cv just by a click</p>
+        </header>
+        <main>
+          <div className="flex">
+            <span>Editing Mode</span>
+            <label className="switch" for="checkbox">
+              <input
+                type="checkbox"
+                id="checkbox"
+                name="mode"
+                onClick={this.toggleViewMode}
+              />
+              <div className="slider round"></div>
+            </label>
+            <span>Preview Mode</span>
+          </div>
+          {this.state.isPreviewEnabled ? (
+            <Preview previewData={this.state} />
+          ) : (
+            <Edit
+              formData={this.state}
+              generalChangeHandler={this.handleGeneralChange}
+              educationChangeHandler={this.handleEducationAdd}
+              experienceChangeHandler={this.handleExperienceAdd}
+              removeEducationHandler={this.handleEducationRemove}
+              removeExperienceHandler={this.handleExperienceRemove}
+            />
+          )}
+        </main>
+        <footer>
+          <a href="https://www.github.com/azazel-oss">
+            Copyright &copy; Asad Mahmood
+          </a>
+        </footer>
       </div>
     );
   }
