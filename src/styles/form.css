@@ -1,0 +1,32 @@
+label {
+  display: block;
+}
+
+input {
+  padding: 0.5em;
+  font-family: "Noto Sans", sans-serif;
+  border: 1px solid #32213a;
+  border-radius: 5px;
+  margin: 5px 0 7px;
+}
+
+ol {
+  margin: 0;
+  padding: 1em;
+}
+
+button {
+  background-color: #32213a;
+  color: #d1caa1;
+  border: none;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  padding: 0.4em 1.8em;
+  border-radius: 0.3em;
+  margin: 1em 0;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}

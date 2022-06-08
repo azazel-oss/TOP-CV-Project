@@ -18,7 +18,7 @@ class General extends Component {
     return (
       <div>
         <h3>General Information</h3>
-        <label htmlFor="name">Enter name:</label>
+        <label htmlFor="name">Name:</label>
         <input
           type="text"
           id="name"
@@ -27,7 +27,7 @@ class General extends Component {
           onChange={this.handleChange}
         />
         <br />
-        <label htmlFor="email">Enter email:</label>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"
@@ -36,7 +36,7 @@ class General extends Component {
           onChange={this.handleChange}
         />
         <br />
-        <label htmlFor="phone">Enter phone:</label>
+        <label htmlFor="phone">Phone:</label>
         <input
           type="text"
           id="phone"

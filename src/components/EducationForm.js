@@ -29,7 +29,7 @@ class EducationForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleAddButtonClick}>
-        <label htmlFor="schoolName">Enter school name:</label>
+        <label htmlFor="schoolName">School name:</label>
         <input
           type="text"
           id="schoolName"
@@ -39,7 +39,7 @@ class EducationForm extends Component {
           required
         />
         <br />
-        <label htmlFor="studyTitle">Enter title of the course:</label>
+        <label htmlFor="studyTitle">Title of the course:</label>
         <input
           type="text"
           id="studyTitle"
@@ -49,7 +49,7 @@ class EducationForm extends Component {
           required
         />
         <br />
-        <label htmlFor="studyDate">Enter date of the course:</label>
+        <label htmlFor="studyDate">Date of the course:</label>
         <input
           type="date"
           id="studyDate"

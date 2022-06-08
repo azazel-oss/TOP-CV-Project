@@ -14,9 +14,9 @@ class Preview extends Component {
         <section>
           <h3>Educational Information</h3>
           <div>
-            {this.props.previewData.education.map((element) => {
+            {this.props.previewData.education.map((element, index) => {
               return (
-                <div>
+                <div key={index}>
                   <div>{element.schoolName}</div>
                   <div>{element.studyTitle}</div>
                   <div>{element.studyDate}</div>

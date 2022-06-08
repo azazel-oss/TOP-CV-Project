@@ -4,6 +4,7 @@ import EducationForm from "./EducationForm";
 import Experience from "./Experience";
 import ExperienceForm from "./ExperienceForm";
 import General from "./General";
+import "../styles/form.css";
 
 class Edit extends Component {
   render() {
@@ -15,24 +16,30 @@ class Edit extends Component {
         />
         <h3>Education Details</h3>
         <EducationForm addHandler={this.props.educationChangeHandler} />
-        {this.props.formData.education.map((data) => (
-          <Education
-            key={data.id}
-            id={data.id}
-            data={data}
-            removeEducationHandler={this.props.removeEducationHandler}
-          />
-        ))}
+        <ol>
+          {this.props.formData.education.map((data) => (
+            <li key={data.id}>
+              <Education
+                id={data.id}
+                data={data}
+                removeEducationHandler={this.props.removeEducationHandler}
+              />
+            </li>
+          ))}
+        </ol>
         <h3>Job Experience</h3>
         <ExperienceForm addHandler={this.props.experienceChangeHandler} />
-        {this.props.formData.experience.map((data) => (
-          <Experience
-            key={data.id}
-            id={data.id}
-            data={data}
-            removeExperienceHandler={this.props.removeExperienceHandler}
-          />
-        ))}
+        <ol>
+          {this.props.formData.experience.map((data) => (
+            <li key={data.id}>
+              <Experience
+                id={data.id}
+                data={data}
+                removeExperienceHandler={this.props.removeExperienceHandler}
+              />
+            </li>
+          ))}
+        </ol>
       </>
     );
   }

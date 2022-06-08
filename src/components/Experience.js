@@ -13,7 +13,7 @@ class Experience extends Component {
   render() {
     return (
       <div>
-        {this.props.data.companyName}
+        <div className="added-item">{this.props.data.companyName}</div>
 
         <button data-id={this.props.id} onClick={this.handleRemoveExperience}>
           Remove

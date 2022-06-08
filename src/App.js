@@ -72,7 +72,7 @@ class App extends Component {
         <main>
           <div className="flex">
             <span>Editing Mode</span>
-            <label className="switch" for="checkbox">
+            <label className="switch" htmlFor="checkbox">
               <input
                 type="checkbox"
                 id="checkbox"

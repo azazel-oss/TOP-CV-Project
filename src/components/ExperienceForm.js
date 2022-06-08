@@ -33,7 +33,7 @@ class ExperienceForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleAddButtonClick}>
-        <label htmlFor="companyName">Enter company name:</label>
+        <label htmlFor="companyName">Company name:</label>
         <input
           type="text"
           id="companyName"
@@ -43,7 +43,7 @@ class ExperienceForm extends Component {
           required
         />
         <br />
-        <label htmlFor="positionTitle">Enter job position:</label>
+        <label htmlFor="positionTitle">Job position:</label>
         <input
           type="text"
           id="positionTitle"
@@ -53,7 +53,7 @@ class ExperienceForm extends Component {
           required
         />
         <br />
-        <label htmlFor="jobTasks">Enter job tasks(separated by commas):</label>
+        <label htmlFor="jobTasks">Job tasks(separated by commas):</label>
         <input
           type="text"
           id="jobTasks"
@@ -63,7 +63,7 @@ class ExperienceForm extends Component {
           required
         />
         <br />
-        <label htmlFor="startDate">Enter start date:</label>
+        <label htmlFor="startDate">Start date:</label>
         <input
           type="date"
           id="startDate"
@@ -73,7 +73,7 @@ class ExperienceForm extends Component {
           required
         />
         <br />
-        <label htmlFor="endDate">Enter end date:</label>
+        <label htmlFor="endDate">End date:</label>
         <input
           type="date"
           id="endDate"
